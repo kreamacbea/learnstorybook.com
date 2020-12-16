@@ -134,13 +134,15 @@ Add a new field to `package.json` with the following:
     ],
     "globals": {
       "ts-jest": {
-        "tsConfig": "<rootDir>/tsconfig.spec.json",
+        "tsconfig": "<rootDir>/tsconfig.spec.json",
         "stringifyContentPathRegex": "\\.html$",
         "diagnostics": false,
         "isolatedModules": true,
         "astTransformers": [
-          "<rootDir>/node_modules/jest-preset-angular/InlineHtmlStripStylesTransformer"
-        ]
+           "<rootDir>/node_modules/jest-preset-angular/build/InlineFilesTransformer",
+           "<rootDir>/node_modules/jest-preset-angular/build/StripStylesTransformer"
+          ]
+        }
       }
     },
     "moduleNameMapper": {
